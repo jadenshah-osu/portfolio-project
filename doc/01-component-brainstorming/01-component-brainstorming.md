@@ -186,9 +186,10 @@ will likely refine your design to make your implementation easier to use.
   - **Kernel Methods**:
     - `void add(String track)`: Adds `track` to the end of `this`.
     - `void remove(String track)`: Removes `track` from `this`.
-    - `void move(String track, int k)`: Moves `track` to the `k` position
-      of `this`, and pushes subsequent tracks down a place.
+    - `void swap(int k, int j)`: Swaps `track` at positions `i` and `j`.
   - **Secondary Methods**:
+    - `void move(String track, int k)`: Inserts `track` to the `k` position of
+      `this`, and pushes subsequent tracks down a place.
     - `String[] shuffle()`: Randomizes the order of tracks in `this`. Returns as
       a seperate object.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
@@ -204,8 +205,8 @@ will likely refine your design to make your implementation easier to use.
         size.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - Yes, the `shuffle` method can use the kernel methods. For example it can
-        use the `move` kernel method until the playlist is shuffled.
+      - Yes, the `move` method can use the kernel methods. For example it can
+        use the `swap` kernel method until the playlist is rearranged.
 
 
 - Component Design #2: Record Catalog
