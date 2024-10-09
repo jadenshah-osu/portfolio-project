@@ -2,7 +2,7 @@
 
 - **Name**: Jaden Shah
 - **Dot Number**: shah.1600
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Due Date**: 10/3 @ 4:10 PM EST
 
 ## Assignment Overview
 
