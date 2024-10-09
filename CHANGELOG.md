@@ -81,6 +81,11 @@ the following form: YYYY.0M.0D.
 
 ## 2024.10.06
 
+### Added
+
+- Designed a proof of concept for playlist component
+
 ### Updated
 
 - Tweaks to playlist component brainstorm
+- Changed design to include a size method
