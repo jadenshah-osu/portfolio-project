@@ -89,3 +89,13 @@ the following form: YYYY.0M.0D.
 
 - Tweaks to playlist component brainstorm
 - Changed design to include a size method
+
+## 2024.10.18
+
+### Added
+
+- Designed kernel and enhanced interfaces for Playlist component
+
+### Updated
+
+- Changed design to include a Track class
