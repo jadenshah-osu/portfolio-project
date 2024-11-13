@@ -1,4 +1,4 @@
-public class Playlist extends Standard<Playlist> {
+public interface Playlist extends Standard<Playlist> {
 
     public class Track {
         String title;
