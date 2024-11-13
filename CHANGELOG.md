@@ -105,3 +105,9 @@ the following form: YYYY.0M.0D.
 ### Added
 
 - Designed abstract class for Playlist component
+
+## 2024.11.13
+
+### Updated
+
+- Updated PlaylistKernel to just have contracts and headers

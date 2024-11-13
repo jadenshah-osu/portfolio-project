@@ -1,58 +1,48 @@
 public interface Playlist extends Standard<Playlist> {
 
-    public class Track {
-        String title;
-        String artist;
-        String isrc;
-    }
+    /**
+     * Reports the number of tracks in {@code this}
+     *
+     * @return The number of tracks in {@code this}
+     */
+    int trackCount();
 
-    track() {
-        this.title = "";
-        this.artist = "";
-        this.isrc = "";
-    }
+    /**
+     * Adds {@code track} to the end of {@code this}
+     *
+     * @param track
+     *            The track to be added
+     * @requires this.trackCount() < 100
+     * @updates {@code this}
+     * @ensures {@code this} = #this + {@code track} and this.trackCount() =
+     *          #this.trackCount() + 1
+     */
+    void add(Track track);
 
-    playlist() {
-        Track[] playlist = new Track[100];
-        for(int i = 0; i < 100; i++) {
-            playlist[i] = new track();
-        }
-    }
+    /**
+     * Removes {@code track} from {@code this} and moves later tracks forward to
+     * eliminate internal blank space
+     *
+     * @param track
+     *            The track to be removed
+     * @requires {@code track} exists in {@code this}
+     * @updates {@code this}
+     * @ensures {@code this} = #this - {@code track} and this.trackCount() =
+     *          #this.trackCount() - 1
+     */
+    void remove(Track track);
 
-    int trackCount() {
-        for(int i = 0, i < 100; i++) {
-            if(this[i].title.equals("")) {
-                int result = i + 1;
-                return result;
-            }
-        }
-    }
-
-    void add(Track track) {
-        pos = this.trackCount();
-        this[pos] = track;
-    }
-
-    void remove(Track track) {
-        for(int i = 0, i < 100; i++) {
-            if(this[i].title.equals(track.title)) {
-                this[i].title = "";
-                this[i].artist = "";
-                this[i].isrc = "";
-                int pos = i;
-                break;
-            }
-        }
-        for (int i = pos, i < 100; i++) {
-            this[i] = this[i + 1];
-        }
-    }
-
-    void swap(int pos1, int pos2) {
-        Track temp1 = this[pos1];
-        Track temp2 = this[pos2];
-        this[pos1] = temp2;
-        this[pos2] = temp1;
-    }
+    /**
+     * Swaps the track at {@code pos1} with the track at {@code pos2}
+     *
+     * @param pos1
+     *            The postion of track 1
+     * @param pos2
+     *            The position of track 2
+     * @requires this[pos1] /= null and this[pos2] /= null
+     * @updates {@code this}
+     * @ensures this[pos1] = #this[pos2] and this[pos2] = #this[pos1]
+     */
+    void swap(int pos1, int pos2);
 
 }
