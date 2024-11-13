@@ -1,4 +1,4 @@
-public class Playlist extends PlaylistKernel {
+public interface Playlist extends PlaylistKernel {
 
     shuffle(Playlist playlist) {
         size = playlist.trackCount();
