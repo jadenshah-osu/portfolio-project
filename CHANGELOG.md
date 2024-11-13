@@ -99,3 +99,9 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed design to include a Track class
+
+## 2024.10.31
+
+### Added
+
+- Designed abstract class for Playlist component
