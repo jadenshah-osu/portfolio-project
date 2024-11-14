@@ -114,6 +114,10 @@ the following form: YYYY.0M.0D.
 
 ## 2024.11.14
 
+### Added
+
+- Designed kernel implementation for Playlist component
+
 ### Updated
 
 - Updated Playlist.java to just have contracts and headers
