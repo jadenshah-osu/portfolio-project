@@ -8,6 +8,6 @@ public interface Playlist extends PlaylistKernel {
      *            The playlist to be shuffled
      * @return A shuffled version of {@code playlist}
      */
-    String[] shuffle(Playlist playlist);
+    Track[] shuffle(Playlist playlist);
 
 }
