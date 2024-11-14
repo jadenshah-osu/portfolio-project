@@ -1,12 +1,13 @@
 public interface Playlist extends PlaylistKernel {
 
-    shuffle(Playlist playlist) {
-        size = playlist.trackCount();
-        Random rand = new Random();
-        for(int i = size; i > 0, i--) {
-            int j = rand.nextInt(i + 1);
-            playlist.swap(i, j);
-        }
-    }
+    /**
+     * Shuffles (randomizes the order) {@code playlist} and returns the shuffled
+     * playlist.
+     *
+     * @param playlist
+     *            The playlist to be shuffled
+     * @return A shuffled version of {@code playlist}
+     */
+    String[] shuffle(Playlist playlist);
 
 }

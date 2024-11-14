@@ -1,14 +1,14 @@
 public interface Playlist extends Standard<Playlist> {
 
     /**
-     * Reports the number of tracks in {@code this}
+     * Reports the number of tracks in {@code this}.
      *
      * @return The number of tracks in {@code this}
      */
     int trackCount();
 
     /**
-     * Adds {@code track} to the end of {@code this}
+     * Adds {@code track} to the end of {@code this}.
      *
      * @param track
      *            The track to be added
@@ -21,7 +21,7 @@ public interface Playlist extends Standard<Playlist> {
 
     /**
      * Removes {@code track} from {@code this} and moves later tracks forward to
-     * eliminate internal blank space
+     * eliminate internal blank space.
      *
      * @param track
      *            The track to be removed
@@ -33,7 +33,7 @@ public interface Playlist extends Standard<Playlist> {
     void remove(Track track);
 
     /**
-     * Swaps the track at {@code pos1} with the track at {@code pos2}
+     * Swaps the track at {@code pos1} with the track at {@code pos2}.
      *
      * @param pos1
      *            The postion of track 1
