@@ -110,4 +110,10 @@ the following form: YYYY.0M.0D.
 
 ### Updated
 
-- Updated PlaylistKernel to just have contracts and headers
+- Updated PlaylistKernel.java to just have contracts and headers
+
+## 2024.11.14
+
+### Updated
+
+- Updated Playlist.java to just have contracts and headers
