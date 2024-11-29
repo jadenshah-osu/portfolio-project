@@ -37,6 +37,28 @@ public class PlaylistOnArray extends PlaylistSecondary {
     }
 
     @Override
+    public final void clear() {
+        for (int i = 0; i < 100; i++) {
+            this[i] = new Track();
+        }
+    }
+
+    @Override
+    public final Playlist newInstance() {
+        Playlist result = new PlaylistOnArray();
+        return result;
+    }
+
+    @Override
+    public final void transferFrom(Playlist source) {
+        int sourceCount = source.trackCount();
+        for (int i = 0; i < sourceCount; i++) {
+            this[i] = source[i];
+            source[i] = new Track();
+        }
+    }
+
+    @Override
     public int trackCount() {
         for (int i = 0; i < 100; i++) {
             if (this[i].title.equals("")) {

@@ -121,3 +121,9 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Updated Playlist.java to just have contracts and headers
+
+## 2024.11.29
+
+### Updated
+
+- Updated PlaylistOnArray to include Standard methods
