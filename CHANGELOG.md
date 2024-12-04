@@ -127,3 +127,14 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Updated PlaylistOnArray to include Standard methods
+
+## 2024.12.4
+
+### Added
+
+- Designed test suite for Playlist component
+- Designed two different use cases for Playlist component
+
+### Updated
+
+- Changed design to include error catching
