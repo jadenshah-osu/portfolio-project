@@ -1,5 +1,5 @@
 /**
- * {@code playlist} of {@code Track} represented on an array.
+ * {@code Playlist} of {@code Track} represented on an array.
  *
  * @convention {@code playlist} is an array of size 100 of {@code Track}. All
  *             spots in the array should be filled with the default value of
@@ -28,7 +28,7 @@ public class PlaylistOnArray extends PlaylistSecondary {
     private void createNewRep() {
         this.playlist = new Track[100];
         for (int i = 0; i < 100; i++) {
-            this[i] = new Track();
+            this.playlist[i] = new Track();
         }
     }
 
@@ -39,7 +39,7 @@ public class PlaylistOnArray extends PlaylistSecondary {
     @Override
     public final void clear() {
         for (int i = 0; i < 100; i++) {
-            this[i] = new Track();
+            this.playlist[i] = new Track();
         }
     }
 
@@ -53,53 +53,54 @@ public class PlaylistOnArray extends PlaylistSecondary {
     public final void transferFrom(Playlist source) {
         int sourceCount = source.trackCount();
         for (int i = 0; i < sourceCount; i++) {
-            this[i] = source[i];
-            source[i] = new Track();
+            this.playlist[i] = source.playlist[i];
+            source.playlist[i] = new Track();
         }
     }
 
     @Override
     public int trackCount() {
         for (int i = 0; i < 100; i++) {
-            if (this[i].title.equals("")) {
-                int result = i + 1;
-                return result;
+            if (this.playlist[i].title.equals("")) {
+                return i;
             }
         }
+        return 100;
     }
 
     @Override
     public void add(Track track) {
-
-    void add(Track track) {
-        pos = this.trackCount();
-        this[pos] = track;
-    }
-
+        int pos = this.trackCount();
+        if (pos < 100) {
+            this.playlist[pos] = track;
+        }
     }
 
     @Override
     public void remove(Track track) {
+        int pos = -1;
         for (int i = 0; i < 100; i++) {
-            if (this[i].title.equals(track.title)) {
-                this[i].title = "";
-                this[i].artist = "";
-                this[i].isrc = "";
-                int pos = i;
+            if (this.playlist[i].title.equals(track.title)) {
+                pos = i;
                 break;
             }
         }
-        for (int i = pos; i < 100; i++) {
-            this[i] = this[i + 1];
+        if (pos != -1) {
+            this.playlist[pos] = new Track();
+            for (int i = pos; i < 99; i++) {
+                this.playlist[i] = this.playlist[i + 1];
+            }
+            this.playlist[99] = new Track();
         }
     }
 
     @Override
     public void swap(int pos1, int pos2) {
-        Track temp1 = this[pos1];
-        Track temp2 = this[pos2];
-        this[pos1] = temp2;
-        this[pos2] = temp1;
+        if (pos1 >= 0 && pos1 < 100 && pos2 >= 0 && pos2 < 100) {
+            Track temp = this.playlist[pos1];
+            this.playlist[pos1] = this.playlist[pos2];
+            this.playlist[pos2] = temp;
+        }
     }
 
 }
